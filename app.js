@@ -30,9 +30,10 @@ app.use(express.json());
 
 // CORS setup
 const corsOptions = {
-  origin: process.env.FRONTEND_ORIGIN, // Use environment variable
+  origin: [process.env.FRONTEND_ORIGIN, 'https://fabric-demo-three.vercel.app'], // Allow multiple origins
   credentials: true,
 };
+
 app.use(cors(corsOptions));
 app.use(cors(corsOptions));
 
