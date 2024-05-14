@@ -64,7 +64,7 @@ function authenticateUser(req, res, next) {
 }
 
 // Product, Store, Purchase, and Sales APIs
-app.use("/api/product", authenticateUser, productRoute);
+app.use("/api/product", productRoute);
 app.use("/api/store", authenticateUser, storeRoute);
 app.use("/api/purchase", authenticateUser, purchaseRoute);
 app.use("/api/sales", authenticateUser, salesRoute);
