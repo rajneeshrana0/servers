@@ -1,4 +1,4 @@
-const Quality = require('../Models/Quality');
+const Quality = require('../models/Quality');
 
 exports.createQuality = async (req, res) => {
     try {
