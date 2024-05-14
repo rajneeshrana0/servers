@@ -87,7 +87,9 @@ app.post("/api/login", async (req, res) => {
     if (user) {
       const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: "1h" });
       console.log(token)
-      res.cookie("token", token, { httpOnly: true, secure: true });
+      // res.cookie("token", token, { httpOnly: true, secure: true });
+      res.cookie("token", token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' });
+
       res.json({ message: "Login successful" , data :user }  ) ;
       userAuthCheck = user;
     } else {
